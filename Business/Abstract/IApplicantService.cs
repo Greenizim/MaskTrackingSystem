@@ -9,6 +9,7 @@ namespace Business.Abstract
 {
     public interface IApplicantService
     {
+        //interfaceler mueyyen method imzalarini ozunde tutub bir birinin alternativi olan sistemlerin ferqli implemetasiya elemelerine yarayarlar
         void ApplyForMask(Person person);
 
         List<Person> GetList();
