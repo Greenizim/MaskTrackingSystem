@@ -1,5 +1,8 @@
 ﻿//Citizen citizen1 = new Citizen();
 
+using Business.Concrete;
+using Entities.Concrete;
+
 Variables();
 //arrayler /arrays
 
@@ -69,6 +72,17 @@ void Variables()
 
     Console.WriteLine(price * 1.18);
 }
+Person  person1 = new Person();
+person1.NationalIdentity = 1234567890;
+person1.FirstName = "Alyar";
+person1.LastName = "Mammadov";
+person1.DateOfBirthYear = 2002;
+
+PttManager pttManager = new PttManager(new PersonManager());
+pttManager.GiveMask(person1);
+
+
+
 
 //pascal casing
 public class Citizen
@@ -78,3 +92,6 @@ public class Citizen
     public int Birthyear { get; set; }
     public long CID { get; set; }
 }
+
+
+

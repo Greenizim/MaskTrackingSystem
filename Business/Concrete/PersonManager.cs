@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using MernisServiceReference;
 
 namespace Business.Concrete
 {
@@ -37,9 +38,10 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public bool CheckPerson(Person person)
+        public  bool CheckPerson(Person person)
         {
-                return true;
+            KPSPublicSoapClient client = new KPSPublicSoapClient(KPSPublicSoapClient.EndpointConfiguration.KPSPublicSoap);
+            return client.TCKimlikNoDogrulaAsync(new TCKimlikNoDogrulaRequest(new TCKimlikNoDogrulaRequestBody(person.NationalIdentity, person.FirstName, person.LastName, person.DateOfBirthYear))).Result.Body.TCKimlikNoDogrulaResult;
         }
         //implement edirik akpden
     }

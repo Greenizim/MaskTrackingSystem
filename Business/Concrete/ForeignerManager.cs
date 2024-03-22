@@ -9,7 +9,7 @@ using Entities.Concrete;
 namespace Business.Concrete
 {
     //Sonar Qube
-    internal class ForeignerManager : IApplicantService
+    public class ForeignerManager : IApplicantService
     {
         //eyer bir proyektde ne qeder if varsa o proyekt o qeder proqramlasdirma prinsiplerine uzaqdir.
         //bir proqlamlasdirma keyfiyyet olcum programi var Sonar Cube.
